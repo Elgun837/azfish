@@ -17,6 +17,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        return view('home');
+        $slider = Slider::all();
+
+        return response()->json($slider, 200);
     }
 }
