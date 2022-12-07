@@ -20,6 +20,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
+
 Route::group(['prefix' => 'fish_backend'], function (): void {
     Voyager::routes();
 });
@@ -27,7 +28,9 @@ Route::group(['prefix' => 'fish_backend'], function (): void {
 Auth::routes(['register' => false, 'login' => false]);
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => 'localizationRedirect'], function(): void {
-    Route::get('/', [HomeController::class, 'index'])->name('home');    
+    Route::get('/', function () {
+        return view('home');
+    });
 
     Route::group(['prefix' => 'catalog'], function() {
         Route::get('', [CategoryController::class, 'index'])->name('catalog');
