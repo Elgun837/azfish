@@ -22,7 +22,7 @@ return [
     'contacts' => 'Contacts',
     'partners' => 'Partners',
     'brands' => 'Brands',
-    'no_models' => 'No results',
+    'no_items' => 'No results',
     'text_catalog' => 'Catalogue of products'
 
 ];
