@@ -20,13 +20,11 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::view('/{path?}','home')->where('path', '.+');
-
 Route::group(['prefix' => 'fish_backend'], function (): void {
     Voyager::routes();
 });
 
-Auth::routes(['register' => false, 'login' => false]);    
+Auth::routes(['register' => false, 'login' => false]);
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => 'localizationRedirect'], function(): void {
     Route::get('/', [HomeController::class, 'index'])->name('home');    
