@@ -16,8 +16,8 @@ class SliderController extends Controller
     public function index()
     {
         $slider = Slider::all();
-
-        if(!$slider) {
+        
+        if(!$slider->count()) {
             return response()->json([
                 'date' => [],
                 'message' => trans('default.no_items')
