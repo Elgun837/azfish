@@ -1,6 +1,7 @@
 import LogoIMG from '/images/aff-logo.png'
 import './header.css';
 import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 
 export default function navbar() {
     return (
@@ -10,22 +11,23 @@ export default function navbar() {
             </svg>
 
 
-            <div className='container'>
+
+            <Container className='heaeder-section'>
                 <div className='logo-section'>
-                   <Link to="/"> <img src={LogoIMG} /></Link>
+                    <Link to="/"> <img src={LogoIMG} /></Link>
                 </div>
-                <div className='menu section'>
+                <div className='menu-section'>
                     <nav>
                         <ul>
-                            <li>AZ RU</li>
-                            <li>MENU</li>
+                           
 
-                            <li><Link to="/contact-us">contact</Link></li>
-                            <li><Link to="/about-us">about</Link></li>
+                            <li><Link to="/az">Az</Link></li>
+                            <li><Link to="/ru">Ru</Link></li>
+                            <li>MENU</li>
                         </ul>
                     </nav>
                 </div>
-            </div>
+            </Container>
 
         </div>
     )

@@ -8,7 +8,7 @@ function Home() {
   useEffect(() => {
     axios.get(`/api/product/1`,{
         headers:{
-            apiLocale: "ru";
+            apiLocale: "ru"
         }
     }).then((res) => {
        console.log(res)
