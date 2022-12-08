@@ -3,3 +3,7 @@
 body{
     font-family: "Montserrat";
 }
+
+:root{
+    --main-yellow: linear-gradient(180deg, #9A9176 0%, #C0B691 25%, #CDBF9A 51.04%, #B6AB89 75.52%, #978C6E 100%);
+}
