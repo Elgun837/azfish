@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class ApiLocaleChekcer
+class ApiLocaleChecker
 {
     /**
      * Handle an incoming request.
