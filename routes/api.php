@@ -21,13 +21,16 @@ use App\Http\Controllers\Catalog\ManufacturerController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+Route::group(['middleware' => 'apichecker'], function(): void {
 
-Route::get('slider', [SliderController::class, 'index']);
+    Route::get('slider', [SliderController::class, 'index']);
 
-Route::get('product/{id}', [ProductController::class, 'show'])->name('product');
+    Route::get('product/{id}', [ProductController::class, 'show'])->name('product');
 
-Route::get('category/{id}', [CategoryController::class, 'show'])->name('category');
+    Route::get('category/{id}', [CategoryController::class, 'show'])->name('category');
 
-Route::get('manufacturer', [ManufacturerController::class, 'index'])->name('manufacturer.index');
+    Route::get('manufacturer', [ManufacturerController::class, 'index'])->name('manufacturer.index');
 
-Route::get('manufacturer/{id}', [ManufacturerController::class, 'show'])->name('manufacturer.show');
+    Route::get('manufacturer/{id}', [ManufacturerController::class, 'show'])->name('manufacturer.show');
+
+});
