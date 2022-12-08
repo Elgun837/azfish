@@ -33,12 +33,15 @@ class ProductController extends ApiController
      */
     public function show($id)
     {
-        $product = Product::where('status', 'ACTIVE')->whereTranslation('id', $id)->first();
-
+        
+        $product = Product::where('id', $id)->get();
+        
         if(!$product) {
             return $this->errorResponse(trans('default.no_items'), 200);
         }
-                
+
+        $product = $product->translate(app()->getLocale(), 'en');
+        
         return $this->successResponse($product, 200);
     }
 

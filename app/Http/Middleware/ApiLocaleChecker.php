@@ -16,7 +16,8 @@ class ApiLocaleChecker
      */
     public function handle(Request $request, Closure $next)
     {
-        $locales = array_keys(config('voyager')['multilingual']['locales']);
+        
+        $locales = array_values( config('voyager.multilingual.locales') );
 
         if(in_array($request->header('apiLocale'), $locales)) 
             app()->setLocale($request->header('apiLocale'));
