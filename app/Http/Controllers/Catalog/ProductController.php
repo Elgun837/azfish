@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Catalog;
 
 use Illuminate\Http\Request;
 use App\Models\Catalog\Product;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\Request as ProductRequest;
 
-class ProductController extends Controller
+class ProductController extends ApiController
 {
     /**
      * Send request from product page
@@ -33,16 +33,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::whereTranslation('id', $id)->first();
+        $product = Product::where('status', 'ACTIVE')->whereTranslation('id', $id)->first();
 
         if(!$product) {
-            return response()->json([
-                'date' => [],
-                'message' => trans('default.no_items')
-            ], 200);
+            return $this->errorResponse(trans('default.no_items'), 200);
         }
                 
-        return response()->json($product, 200);
+        return $this->successResponse($product, 200);
     }
 
     /**

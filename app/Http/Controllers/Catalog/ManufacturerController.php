@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Catalog;
 
 use Illuminate\Http\Request;
 use App\Models\Catalog\Manufacturer;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 
-class ManufacturerController extends Controller
+class ManufacturerController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,12 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        $data = Manufacturer::get();
+        $data = Manufacturer::all();
+
+        if(!$data->count())
+            return $this->errorResponse(trans('default.no_items'), 200);
         
-        return view('catalog/manufacturer_list', compact('data'));
+        return $this->successResponse($data, 200);
     }
 
     /**
@@ -44,20 +47,17 @@ class ManufacturerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
-     * @return \Illuminate\View\View
+     * @param  string  $id
+     * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $manufacturer = Manufacturer::where('slug', $slug)->first();
+        $products = Product::where('status', 'ACTIVE')->whereTranslation('manufacturer_id', $id);
 
-        if(!$manufacturer)
-            abort(404);
+        if(!$products)
+            return $this->errorResponse(trans('default.no_items'), 200);
 
-
-        $products = Product::whereTranslation('manufacturer_id', $manufacturer->id)->paginate(9);
-
-        return view('catalog/manufacturer_info', compact('manufacturer', 'products'));
+        return $this->successResponse($products, 200);
     }
 
     /**
