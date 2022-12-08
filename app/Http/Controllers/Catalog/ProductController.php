@@ -28,18 +28,21 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
-     * @return \Illuminate\View\View
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $product = Product::whereTranslation('slug', $slug)->first();
+        $product = Product::whereTranslation('id', $id)->first();
 
         if(!$product) {
-            abort(404);
+            return response()->json([
+                'date' => [],
+                'message' => trans('default.no_items')
+            ], 200);
         }
                 
-        return view('catalog/product', compact('product'));
+        return response()->json($product, 200);
     }
 
     /**

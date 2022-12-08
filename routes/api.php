@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Catalog\SliderController;
+use App\Http\Controllers\Catalog\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ use App\Http\Controllers\Catalog\SliderController;
 // });
 
 Route::get('slider', [SliderController::class, 'index']);
+
+Route::get('product/{id}', [ProductController::class, 'show'])->name('product');
