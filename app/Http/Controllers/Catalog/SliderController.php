@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Catalog;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\Catalog\Slider;
+use App\Models\Catalog\Slider;
 
 class SliderController extends Controller
 {

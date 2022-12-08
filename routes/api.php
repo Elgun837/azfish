@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Catalog\SliderController;
+use App\Http\Controllers\Catalog\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +19,4 @@ use App\Http\Catalog\SliderController;
 //     return $request->user();
 // });
 
-
-Route::group(['middleware' => ['auth:api']], function() {
-
-    Route::get('slider', [SliderController::class, 'index']);
-});
+Route::get('slider', [SliderController::class, 'index']);
