@@ -2,8 +2,20 @@ import Carousel from 'react-bootstrap/Carousel';
 import SlideImg1 from '/images/main-image.jpg';
 import SlideImg2 from '/images/main-image2.jpg';
 import  "./carousel.css";
+import { useEffect } from 'react';
 
 function MainCarousel (){
+
+    useEffect(() => {
+        axios.get(`/api/slider`,{
+           
+        }).then((res) => {
+           console.log(res)
+        })
+        .catch(e => console.log(e)); 
+    });
+
+
     return (
         <Carousel>
         <Carousel.Item>
