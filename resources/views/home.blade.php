@@ -25,33 +25,7 @@
     </head>
     <body data-route="{{ Route::currentRouteName() }}">
     <div id="index">
-                        
-                        </div>
-                        <script defer src="{{ asset('/js/app.js') }}"></script>
-
-       
-        
+    </div>
+    <script defer src="{{ asset('/js/app.js') }}"></script>
     </body>
     </html>
-
-@section('content')
-
-
-
-
-
-
-<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.maskedinput.min.js') }}"></script>
-<script src="{{ asset('assets/js/amiroff.js') }}"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    Swal.fire({
-        position: "center",
-        icon: "success",
-        title: 'TEST success message',
-        showConfirmButton: false,
-        timer: 3000,
-    });
-</script>
-@endsection
