@@ -1,8 +1,17 @@
 import React from 'react'
+import Layout from '../components/Layouts/front.layout'
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+
+      <Layout>
+        <div>
+          Contact page
+        </div>
+      </Layout>
+
+    </div>
   )
 }
 

@@ -26,6 +26,6 @@ Route::group(['prefix' => 'fish_backend'], function (): void {
     Voyager::routes();
 });
 
-Route::view('/{path?}', 'home')->where('path', '.+');
+Route::view('/{path?}','home')->where('path','.+');
 
 Auth::routes(['register' => false, 'login' => false]);
