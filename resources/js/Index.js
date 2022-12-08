@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as ReactDOM from 'react-dom';
 import Main from "./Router";
 import {BrowserRouter, Route} from 'react-router-dom';
-import Layout from "./views/components/Layouts/front.layout";
+
 
 
 class Index extends Component 
