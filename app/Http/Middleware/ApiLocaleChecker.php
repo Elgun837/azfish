@@ -18,8 +18,8 @@ class ApiLocaleChecker
     {
         $locales = array_keys(config('voyager')['multilingual']['locales']);
 
-        if(in_array($request->header('apiLocaleChecker'), $locales)) 
-            app()->setLocale($request->header('apiLocaleChecker'));
+        if(in_array($request->header('apiLocale'), $locales)) 
+            app()->setLocale($request->header('apiLocale'));
         else 
             app()->setLocale('en');
 
