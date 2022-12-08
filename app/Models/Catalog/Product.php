@@ -17,6 +17,11 @@ class Product extends Model
         'slug'
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
+
     /**
      * Scope a query to only include active products.
      *

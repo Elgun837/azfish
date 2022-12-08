@@ -1,0 +1,22 @@
+svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+
+  .heaeder-section.container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 26px;
+}
+.menu-section nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu-section nav ul li
+{
+  padding:0 5px;
+}

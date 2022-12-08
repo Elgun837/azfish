@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Catalog;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
-use App\Model\Catalog\Slider;
+use App\Models\Catalog\Slider;
 
-class SliderController extends Controller
+class SliderController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,9 @@ class SliderController extends Controller
     public function index()
     {
         $slider = Slider::all();
-
-        if(!$slider) {
-            return response()->json([
-                'date' => [],
-                'message' => trans('default.no_items')
-            ], 200);
+        
+        if(!$slider->count()) {
+            return $this->errorResponse(trans('default.no_items'), 200);
         }
 
         return response()->json($slider, 200);

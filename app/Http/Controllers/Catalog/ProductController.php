@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Catalog;
 
 use Illuminate\Http\Request;
 use App\Models\Catalog\Product;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\Request as ProductRequest;
 
-class ProductController extends Controller
+class ProductController extends ApiController
 {
     /**
      * Send request from product page
@@ -28,18 +28,21 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
-     * @return \Illuminate\View\View
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $product = Product::whereTranslation('slug', $slug)->first();
-
+        
+        $product = Product::where('id', $id)->get();
+        
         if(!$product) {
-            abort(404);
+            return $this->errorResponse(trans('default.no_items'), 200);
         }
-                
-        return view('catalog/product', compact('product'));
+
+        $product = $product->translate(app()->getLocale(), 'en');
+        
+        return $this->successResponse($product, 200);
     }
 
     /**

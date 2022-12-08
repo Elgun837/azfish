@@ -4,35 +4,25 @@ namespace App\Http\Controllers\Catalog;
 
 use Illuminate\Http\Request;
 use App\Models\Catalog\Category;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use App\Models\Catalog\Product;
 
-class CategoryController extends Controller
+class CategoryController extends ApiController
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $categories = Category::where('status', 'ACTIVE')->get();
 
         if(!$categories) {
-            abort(404);
+            return $this->errorResponse(trans('default.no_items'), 200);
         }
 
-        return view('catalog/catalog', compact($categories));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return $this->successResponse($categories, 200);
     }
 
     /**
@@ -49,53 +39,13 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
-     * @return \Illuminate\View\View
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $category = Category::whereTranslation('slug', $slug)->first();
-
-        if(!$category) {
-            abort(404);
-        }
-
-        $products = Product::whereTranslation('categories', $category->id)->paginate(9);
+        $products = Product::where('status', 'ACTIVE')->whereTranslation('categories', $id);
                 
-        return view('catalog/category', compact('category', 'products'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return $this->successResponse($products, 200);
     }
 }
