@@ -26,17 +26,6 @@ class CategoryController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -44,7 +33,12 @@ class CategoryController extends ApiController
      */
     public function show($id)
     {
-        $products = Product::where('status', 'ACTIVE')->whereTranslation('categories', $id);
+        $products = Product::where('status', 'ACTIVE')->where('categories', $id);
+
+        if(!$products)
+            return $this->errorResponse(trans('default.no_items'), 200);
+
+        $products = $products->translate(app()->getLocale(), 200);
                 
         return $this->successResponse($products, 200);
     }

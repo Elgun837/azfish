@@ -24,27 +24,6 @@ class ManufacturerController extends ApiController
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  string  $id
@@ -52,45 +31,13 @@ class ManufacturerController extends ApiController
      */
     public function show($id)
     {
-        $products = Product::where('status', 'ACTIVE')->whereTranslation('manufacturer_id', $id);
+        $products = Product::where('status', 'ACTIVE')->where('manufacturer_id', $id);
 
         if(!$products)
             return $this->errorResponse(trans('default.no_items'), 200);
 
+        $products = $products->translate(app()->getLocale(), 200);
+
         return $this->successResponse($products, 200);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
