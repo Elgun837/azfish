@@ -15,12 +15,25 @@ class SliderController extends ApiController
      */
     public function index()
     {
-        $slider = Slider::all();
+        $sliders = Slider::all();
+        $data = [];
         
-        if(!$slider->count()) {
+        if(!$sliders->count()) {
             return $this->errorResponse(trans('default.no_items'), 200);
         }
 
-        return $this->successResponse($slider, 200);
+        foreach ($sliders as $key => $value) {
+            if(!empty($value['link'])){
+                $data[] = [
+                    'video' => $value['link']
+                ];
+            } else {
+                $data[] = [
+                    'image' => $value['image_'.app()->getLocale()]
+                ];
+            }
+        }
+
+        return $this->successResponse($data, 200);
     }
 }
