@@ -23,6 +23,10 @@ svg {
 }
 .menu-section nav ul li
 {
-  padding:0 5px;
+  padding:0 10px;
   color: white;
+}
+.menu-section nav ul a{
+  color: white;
+  text-decoration: none;
 }
