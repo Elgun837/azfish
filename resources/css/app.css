@@ -3,3 +3,15 @@
 body{
     font-family: "Montserrat";
 }
+
+:root{
+    --main-yellow: linear-gradient(180deg, #9A9176 0%, #C0B691 25%, #CDBF9A 51.04%, #B6AB89 75.52%, #978C6E 100%);
+    --secondary-blue: #00A9AE;
+    --text-color: #004471;
+    --gray:#525252;
+    --black: #000;
+    --white: #fff;
+    --gradient-main:linear-gradient(180deg, rgba(0, 207, 214, 0.1274) 0%, rgba(0, 169, 174, 0.26) 100%);
+    --gradient-second: linear-gradient(180deg, rgba(0, 68, 113, 0.26) 0%, rgba(40, 105, 148, 0.26) 47.92%, rgba(0, 52, 87, 0.26) 100%);
+    --gradient-third:linear-gradient(90deg, #06797C 0%, #1E9FA3 50.86%, #01787B 98.65%);
+}

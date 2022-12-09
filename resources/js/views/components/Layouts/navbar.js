@@ -1,4 +1,4 @@
-import LogoIMG from '/images/aff-logo.png'
+import LogoIMG from '/images/aff-logo.svg'
 import './header.css';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';

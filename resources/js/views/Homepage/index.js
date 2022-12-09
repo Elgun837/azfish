@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layouts/front.layout'
 import { useEffect } from 'react'
+import Carousel from '../components/carousel';
 
 
 function Home() {
@@ -22,7 +23,7 @@ function Home() {
      
      <Layout>
       <div>
-        Homepage
+        <Carousel />
       </div>
       </Layout>
    
