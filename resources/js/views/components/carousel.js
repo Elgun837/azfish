@@ -46,7 +46,7 @@ function MainCarousel() {
 
       </Carousel>
 
-      <svg className='bottom-svg'  width="1920" height="64" viewBox="0 0 1440 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className='bottom-svg'  width="100%" height="64" viewBox="0 0 1440 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0L48 7C96 14 192 28 288 28C384 28 480 14 576 7C672 0 768 0 864 9.31875C960 18.8125 1056 37.1875 1152 42C1248 46.8125 1344 37.1875 1392 32.6812L1440 28V126H1392C1344 126 1248 126 1152 126C1056 126 960 126 864 126C768 126 672 126 576 126C480 126 384 126 288 126C192 126 96 126 48 126H0V0Z" fill="white" />
       </svg>
 
