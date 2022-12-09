@@ -19,15 +19,15 @@ function Home() {
 
 
   return (
-    <div>
+    
      
      <Layout>
-      <div>
+      
         <Carousel />
-      </div>
+      
       </Layout>
    
-    </div>
+    
   )
 }
 

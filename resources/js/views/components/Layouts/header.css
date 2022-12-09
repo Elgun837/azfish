@@ -1,4 +1,4 @@
-svg {
+.header svg {
     position: absolute;
     top: 0;
     width: 100%;
@@ -29,4 +29,9 @@ svg {
 .menu-section nav ul a{
   color: white;
   text-decoration: none;
+}
+.menu-section nav ul li:last-child
+{
+  padding:0;
+  color: white;
 }

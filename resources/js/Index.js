@@ -9,12 +9,12 @@ class Index extends Component
 {
     render(){
         return(
-        <div>
+       
             
             <BrowserRouter>
                 <Route component={Main} />
             </BrowserRouter>
-        </div>
+       
         )
     }
 }

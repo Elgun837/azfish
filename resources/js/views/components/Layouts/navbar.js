@@ -25,6 +25,7 @@ export default function navbar() {
 
                             <li><Link to="/az">Az</Link></li>
                             <li><Link to="/ru">Ru</Link></li>
+                            
                             <Menu />
                             <SearchBar />
                         </ul>
@@ -33,7 +34,7 @@ export default function navbar() {
                 </div>
             </Container>
             
-
+        
         </div>
     )
 }
