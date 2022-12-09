@@ -12,7 +12,7 @@ class SearchController extends Controller
     {
         $_search = $request->input('search');
         
-        return view('search', ['data' => $this->GetSearchResults($_search, false), 'search' => $_search]);
+        return $this->successReponse($this->GetSearchResults($_search, false), 200);
     }
 
     public function autocomplete($name) : string
@@ -23,12 +23,13 @@ class SearchController extends Controller
     private function GetSearchResults($search, $ajax = true) : array
     {
         if(!$ajax) {
-            $results = Product::whereTranslation('name', 'like', "%{$search}%")->paginate(12);
+            $results = Product::where('name', 'like', "%{$search}%")->paginate(12);
         } else {
-            $results = Product::whereTranslation('name', 'like', "%{$search}%")->get();
+            $results = Product::where('name', 'like', "%{$search}%")->get();
         }        
 
         if(count($results)) {
+            $results = $results->translate(app()->getLocale(), 200);
             if(!$ajax)
                 return $results;
                 

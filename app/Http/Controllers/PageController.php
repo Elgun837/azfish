@@ -27,10 +27,10 @@ class PageController extends Controller
     {
         $result = Page::where('slug', $slug)->first();
         if(!$result) {
-            abort(404);
+            return $this->errorResponse(trans('deafult.no_items'), 200);
         }
         $result = $result->translate(app()->getLocale(), 'en');
 
-        return view('page', compact('result'));
+        return $this->successResponse($result, 200);
     }
 }

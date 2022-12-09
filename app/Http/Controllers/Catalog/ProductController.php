@@ -34,7 +34,7 @@ class ProductController extends ApiController
     public function show($id)
     {
         
-        $product = Product::where('id', $id)->get();
+        $product = Product::where('status', 'ACTIVE')->where('id', $id)->get();
         
         if(!$product) {
             return $this->errorResponse(trans('default.no_items'), 200);
