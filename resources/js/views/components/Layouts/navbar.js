@@ -2,6 +2,7 @@ import LogoIMG from '/images/aff-logo.svg'
 import './header.css';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
+import Menu from './menu/menu';
 
 export default function navbar() {
     return (
@@ -23,11 +24,13 @@ export default function navbar() {
 
                             <li><Link to="/az">Az</Link></li>
                             <li><Link to="/ru">Ru</Link></li>
-                            <li>MENU</li>
+                            <Menu />
                         </ul>
+                        
                     </nav>
                 </div>
             </Container>
+            
 
         </div>
     )

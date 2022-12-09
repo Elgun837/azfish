@@ -1,4 +1,6 @@
+.carousel-inner {
+    z-index: -3;
+}
 .carousel.slide {
     top: -200px;
-    z-index: -5;
 }

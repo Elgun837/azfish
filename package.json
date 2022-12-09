@@ -32,9 +32,11 @@
         "@emotion/react": "^11.10.5",
         "@emotion/styled": "^11.10.5",
         "@mui/material": "^5.10.17",
+        "framer-motion": "^3.0.0",
         "gulp": "^4.0.2",
         "jquery": "^3.6.1",
         "react-bootstrap": "^2.7.0",
-        "react-router-dom": "^5.2.0"
+        "react-router-dom": "^5.2.0",
+        "swiper": "^8.4.5"
     }
 }

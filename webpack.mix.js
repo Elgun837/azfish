@@ -22,5 +22,5 @@ mix.js("resources/js/app.js", "public/js")
         processCssUrls: false,
    })
     .sourceMaps()
-    .browserSync('https://azfish.test/');
+    .browserSync('https://azfish.test');
 
