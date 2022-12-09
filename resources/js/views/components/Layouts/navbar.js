@@ -3,6 +3,7 @@ import './header.css';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Menu from './menu/menu';
+import SearchBar from './searchbar/searcjbar';
 
 export default function navbar() {
     return (
@@ -25,6 +26,7 @@ export default function navbar() {
                             <li><Link to="/az">Az</Link></li>
                             <li><Link to="/ru">Ru</Link></li>
                             <Menu />
+                            <SearchBar />
                         </ul>
                         
                     </nav>
