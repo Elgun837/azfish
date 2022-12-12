@@ -35,3 +35,10 @@
   padding:0;
   color: white;
 }
+hr.horizontal-divider {
+  margin: 7px 0;
+  border: 1px solid;
+  opacity: 1;
+  color: white;
+  transform: translate(0%, -20%);
+}

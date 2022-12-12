@@ -24,6 +24,7 @@ export default function navbar() {
                            
 
                             <li><Link to="/az">Az</Link></li>
+                            <hr className='horizontal-divider'/>
                             <li><Link to="/ru">Ru</Link></li>
                             
                             <Menu />
