@@ -5,3 +5,18 @@
     top: -200px;
     margin-bottom: -260px;
 }
+.slider-caption.carousel-caption {
+    top: 40%;
+    left: 0%;
+    right: 0;
+    text-align: left;
+}
+.slider-caption.carousel-caption h3,
+.slider-caption.carousel-caption p{
+    width: 50%;
+}
+
+a.carousel-control-prev,
+a.carousel-control-next{
+    display: none;
+}

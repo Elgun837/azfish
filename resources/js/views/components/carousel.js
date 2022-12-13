@@ -2,23 +2,33 @@ import Carousel from 'react-bootstrap/Carousel';
 import SlideImg1 from '/images/main-image.jpg';
 import SlideImg2 from '/images/main-image2.jpg';
 import "./carousel.css";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function MainCarousel() {
-
+  const [data,setData] = useState();
+  const [refresh,setRefresh] = useState(false);
   useEffect(() => {
     axios.get(`/api/slider`, {
 
-    }).then((res) => {
-      console.log(res)
+    })
+    .then((res) => {
+     
+      setData(JSON.stringify(res.data.data))
+      
+      
     })
       .catch(e => console.log(e));
-  });
+  },[refresh]);
+ 
 
+ 
 
   return (
 
     <>
+     {
+      console.log(data)
+     }
       <Carousel>
         <Carousel.Item>
           <img
@@ -26,9 +36,9 @@ function MainCarousel() {
             src={SlideImg1}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <Carousel.Caption className='slider-caption container'>
+            <h3>When technology and tradition meet to save the nature of caspian region</h3>
+            <p>In the course of a long search, we developed our own optimal methods for growing and processing fish in compliance with all environmental standards and today has become the largest investor in the fish farming of Azerbaijan.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -38,7 +48,7 @@ function MainCarousel() {
             alt="Second slide"
           />
 
-          <Carousel.Caption>
+          <Carousel.Caption className='slider-caption container'>
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
