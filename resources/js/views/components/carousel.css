@@ -1,3 +1,5 @@
+
+@import "../../../css/app.css";
 .carousel-inner {
     z-index: -3;
 }
@@ -19,4 +21,51 @@
 a.carousel-control-prev,
 a.carousel-control-next{
     display: none;
+<<<<<<< HEAD
 }
+=======
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    left: unset;
+}
+.indicator-text{
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    left: unset;
+    color: white;
+}
+.carousel-indicators [data-bs-target]{
+    border: none!important;
+}
+
+.carousel-indicators button {
+    background-color:#d6d6d6cd!important;
+    border-radius:50%!important;
+    width: 11px!important;
+    height: 11px!important;
+    opacity: .5!important;
+}
+
+.carousel-indicators button.active {
+    background:var(--main-yellow)!important;
+    border-radius:50px!important;
+    width: 54px!important;
+    height: 11px!important;
+    opacity: 1!important;
+}
+>>>>>>> da676db191f44f9f34b29ab9dfa41b0f41dad417

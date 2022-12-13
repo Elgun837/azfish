@@ -29,7 +29,7 @@ class SliderController extends ApiController
                 ];
             } else {
                 $data[] = [
-                    'image' => $value['image_'.app()->getLocale()]
+                    'image' => asset('storage/'.$value['image_'.app()->getLocale()])
                 ];
             }
         }

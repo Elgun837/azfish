@@ -5,7 +5,11 @@ import "./carousel.css";
 import { useEffect, useState } from 'react';
 
 function MainCarousel() {
+<<<<<<< HEAD
   const [data,setData] = useState();
+=======
+  const [data,setData] = useState([]);
+>>>>>>> da676db191f44f9f34b29ab9dfa41b0f41dad417
   const [refresh,setRefresh] = useState(false);
   useEffect(() => {
     axios.get(`/api/slider`, {
@@ -13,19 +17,28 @@ function MainCarousel() {
     })
     .then((res) => {
      
+<<<<<<< HEAD
       setData(JSON.stringify(res.data.data))
+=======
+      setData(res.data.data)
+>>>>>>> da676db191f44f9f34b29ab9dfa41b0f41dad417
       
       
     })
       .catch(e => console.log(e));
   },[refresh]);
  
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> da676db191f44f9f34b29ab9dfa41b0f41dad417
  
 
   return (
 
     <>
+<<<<<<< HEAD
      {
       console.log(data)
      }
@@ -54,6 +67,29 @@ function MainCarousel() {
           </Carousel.Caption>
         </Carousel.Item>
 
+=======
+    
+      <Carousel>
+      {
+      data.map((slider, i) => (
+        
+        <Carousel.Item key={i}>
+        <img
+          className="d-block w-100"
+          src={slider.image}
+          alt="First slide"
+        />
+        <Carousel.Caption className='slider-caption container'>
+          <h3>When technology and tradition meet to save the nature of caspian region</h3>
+          <p>In the course of a long search, we developed our own optimal methods for growing and processing fish in compliance with all environmental standards and today has become the largest investor in the fish farming of Azerbaijan.</p>
+        </Carousel.Caption>
+        <span className="indicator-text">Beluga -  largest member of the sturgeon family</span>
+      </Carousel.Item>
+        
+      ))
+    }
+      
+>>>>>>> da676db191f44f9f34b29ab9dfa41b0f41dad417
       </Carousel>
 
       <svg className='bottom-svg'  width="100%" height="64" viewBox="0 0 1440 44" fill="none" xmlns="http://www.w3.org/2000/svg">
