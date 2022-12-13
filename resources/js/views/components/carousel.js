@@ -5,7 +5,7 @@ import "./carousel.css";
 import { useEffect, useState } from 'react';
 
 function MainCarousel() {
-  const [data,setData] = useState();
+  const [data,setData] = useState([]);
   const [refresh,setRefresh] = useState(false);
   useEffect(() => {
     axios.get(`/api/slider`, {
@@ -26,11 +26,11 @@ function MainCarousel() {
   return (
 
     <>
-    {/* {
-      data.map((slider) => (
-        <div>{slider.image}</div>
+    {
+      data.map((slider, i) => (
+        <div key={i}>{slider.image}</div>
       ))
-    } */}
+    }
       <Carousel>
         <Carousel.Item>
           <img

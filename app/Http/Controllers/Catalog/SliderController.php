@@ -34,6 +34,6 @@ class SliderController extends ApiController
             }
         }
 
-        return $this->successResponse((object) $data, 200);
+        return $this->successResponse($data, 200);
     }
 }
