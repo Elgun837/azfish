@@ -17,7 +17,7 @@ function Home() {
       
         <Carousel />
         <About />
-      
+
       </Layout>
    
     

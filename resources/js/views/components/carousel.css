@@ -22,7 +22,6 @@ a.carousel-control-prev,
 a.carousel-control-next{
     display: none;
 }
-
 .carousel-indicators {
     position: absolute;
     right: 10%;

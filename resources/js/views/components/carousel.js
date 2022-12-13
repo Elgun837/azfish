@@ -1,11 +1,12 @@
 import Carousel from 'react-bootstrap/Carousel';
-import SlideImg1 from '/images/main-image.jpg';
-import SlideImg2 from '/images/main-image2.jpg';
+
 import "./carousel.css";
 import { useEffect, useState } from 'react';
 
 function MainCarousel() {
+
   const [data,setData] = useState([]);
+
   const [refresh,setRefresh] = useState(false);
   useEffect(() => {
     axios.get(`/api/slider`, {
@@ -13,19 +14,20 @@ function MainCarousel() {
     })
     .then((res) => {
      
+
       setData(res.data.data)
+
       
       
     })
       .catch(e => console.log(e));
   },[refresh]);
  
-  
- 
 
   return (
 
     <>
+
     
       <Carousel>
       {
@@ -47,6 +49,7 @@ function MainCarousel() {
       ))
     }
       
+
       </Carousel>
 
       <svg className='bottom-svg'  width="100%" height="64" viewBox="0 0 1440 44" fill="none" xmlns="http://www.w3.org/2000/svg">
