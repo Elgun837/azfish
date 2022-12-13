@@ -15,7 +15,7 @@ class SliderController extends ApiController
      */
     public function index()
     {
-        $sliders = Slider::all();
+        $sliders = Slider::all()->sortBy("sort_order");
         $data = [];
         
         if(!$sliders->count()) {
