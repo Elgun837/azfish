@@ -33,7 +33,7 @@ class CategoryController extends ApiController
      */
     public function show($id)
     {
-        $products = Product::where('status', 'ACTIVE')->where('categories', $id);
+        $products = Product::where('status', 'ACTIVE')->where('categories', $id)->get();
 
         if(!$products)
             return $this->errorResponse(trans('default.no_items'), 200);

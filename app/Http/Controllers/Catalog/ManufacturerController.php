@@ -31,7 +31,7 @@ class ManufacturerController extends ApiController
      */
     public function show($id)
     {
-        $products = Product::where('status', 'ACTIVE')->where('manufacturer_id', $id);
+        $products = Product::where('status', 'ACTIVE')->where('manufacturer_id', $id)->get();
 
         if(!$products)
             return $this->errorResponse(trans('default.no_items'), 200);
