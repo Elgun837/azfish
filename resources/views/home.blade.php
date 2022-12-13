@@ -24,6 +24,7 @@
         <title>@yield('title')</title>
     </head>
     <body data-route="{{ Route::currentRouteName() }}">
+        
     <div id="index">
     </div>
     <script defer src="{{ asset('/js/app.js') }}"></script>
