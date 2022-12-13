@@ -21,11 +21,7 @@
 a.carousel-control-prev,
 a.carousel-control-next{
     display: none;
-<<<<<<< HEAD
 }
-=======
-}
-
 .carousel-indicators {
     position: absolute;
     right: 10%;
@@ -68,4 +64,3 @@ a.carousel-control-next{
     height: 11px!important;
     opacity: 1!important;
 }
->>>>>>> da676db191f44f9f34b29ab9dfa41b0f41dad417
