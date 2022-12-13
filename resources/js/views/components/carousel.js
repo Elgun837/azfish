@@ -3,56 +3,81 @@ import Carousel from 'react-bootstrap/Carousel';
 import "./carousel.css";
 import { useEffect, useState } from 'react';
 
+import YouTube from 'react-youtube';
+
 function MainCarousel() {
 
-  const [data,setData] = useState([]);
+  const [data, setData] = useState([]);
 
-  const [refresh,setRefresh] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     axios.get(`/api/slider`, {
 
     })
-    .then((res) => {
-     
+      .then((res) => {
 
-      setData(res.data.data)
 
-      
-      
-    })
+        setData(res.data.data)
+
+
+
+      })
       .catch(e => console.log(e));
-  },[refresh]);
+  }, [refresh]);
  
+  const opts = {
+    height: '768',
+    width: '100%',
+    playerVars: {
+      
+      autoplay: 1,
+    },
+  }
+
 
   return (
-
+   
     <>
 
-    
-      <Carousel>
-      {
-      data.map((slider, i) => (
-        
-        <Carousel.Item key={i}>
-        <img
-          className="d-block w-100"
-          src={slider.image}
-          alt="First slide"
-        />
-        <Carousel.Caption className='slider-caption container'>
-          <h3>When technology and tradition meet to save the nature of caspian region</h3>
-          <p>In the course of a long search, we developed our own optimal methods for growing and processing fish in compliance with all environmental standards and today has become the largest investor in the fish farming of Azerbaijan.</p>
-        </Carousel.Caption>
-        <span className="indicator-text">Beluga -  largest member of the sturgeon family</span>
-      </Carousel.Item>
-        
-      ))
-    }
       
+      <Carousel>
+        {
+          data.map((slider, i) => (
+            slider.image ?
+
+              <Carousel.Item key={i}>
+                <img
+                  className="d-block w-100"
+                  src={slider.image}
+                  alt="First slide"
+                />
+                <Carousel.Caption className='slider-caption container'>
+                  <h3>When technology and tradition meet to save the nature of caspian region</h3>
+                  <p>In the course of a long search, we developed our own optimal methods for growing and processing fish in compliance with all environmental standards and today has become the largest investor in the fish farming of Azerbaijan.</p>
+                </Carousel.Caption>
+                <span className="indicator-text">Beluga -  largest member of the sturgeon family</span>
+              </Carousel.Item>
+              :
+              <Carousel.Item key={i}>
+
+                <YouTube
+                                   
+                  
+                  className="video-player"                     
+                  iframeClassName={slider.video} 
+                  id={'7uzvATY1mts'}
+                  opts={opts}         
+                />
+
+
+              </Carousel.Item>
+          ))
+        }
+
 
       </Carousel>
 
-      <svg className='bottom-svg'  width="100%" height="64" viewBox="0 0 1440 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className='bottom-svg' width="100%" height="64" viewBox="0 0 1440 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0L48 7C96 14 192 28 288 28C384 28 480 14 576 7C672 0 768 0 864 9.31875C960 18.8125 1056 37.1875 1152 42C1248 46.8125 1344 37.1875 1392 32.6812L1440 28V126H1392C1344 126 1248 126 1152 126C1056 126 960 126 864 126C768 126 672 126 576 126C480 126 384 126 288 126C192 126 96 126 48 126H0V0Z" fill="white" />
       </svg>
 
@@ -60,5 +85,6 @@ function MainCarousel() {
 
   )
 }
+
 
 export default MainCarousel
