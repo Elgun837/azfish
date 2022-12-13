@@ -16,9 +16,9 @@ class CreateSliderTable extends Migration
         Schema::create('slider', function (Blueprint $table) {
             $table->increments('id');
             $table->string('link', 255)->nullable();
-            $table->string('image_en', 255)->nullable();
-            $table->string('image_az', 255)->nullable();
-            $table->string('image_ru', 255)->nullable();
+            $table->string('image_en', 255);
+            $table->string('image_az', 255);
+            $table->string('image_ru', 255);
             $table->integer('sort_order')->default(1);
             $table->timestamps();
         });
