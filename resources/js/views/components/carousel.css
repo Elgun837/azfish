@@ -60,8 +60,8 @@ a.carousel-control-next{
 
 .carousel-indicators button.active {
     background:var(--main-yellow)!important;
-    border-radius:50%!important;
-    width: 11px!important;
+    border-radius:50px!important;
+    width: 54px!important;
     height: 11px!important;
     opacity: 1!important;
 }
