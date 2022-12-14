@@ -15,3 +15,17 @@ body{
     --gradient-second: linear-gradient(180deg, rgba(0, 68, 113, 0.26) 0%, rgba(40, 105, 148, 0.26) 47.92%, rgba(0, 52, 87, 0.26) 100%);
     --gradient-third:linear-gradient(90deg, #06797C 0%, #1E9FA3 50.86%, #01787B 98.65%);
 }
+
+h2{
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 48px;
+}
+p.body-text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+h3{
+    color: var(--text-color);
+}
