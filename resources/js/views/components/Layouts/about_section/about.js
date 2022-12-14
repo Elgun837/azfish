@@ -31,7 +31,7 @@ export default function About() {
             <div className='text-box-2'>
               <div className='foot-row'>
                 <div className='foot-box'>
-                  <h3>Company policy</h3>
+                  <h3 className='about-h3'>Company policy</h3>
                   <img className='svg-img' src={verifyIcon} alt="svg" />
                 </div>
                 <p className='body-text'>

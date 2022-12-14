@@ -16,16 +16,9 @@ body{
     --gradient-third:linear-gradient(90deg, #06797C 0%, #1E9FA3 50.86%, #01787B 98.65%);
 }
 
-h2{
-    color: var(--text-color);
-    font-weight: 700;
-    font-size: 48px;
-}
+
 p.body-text{
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-}
-h3{
-    color: var(--text-color);
 }
