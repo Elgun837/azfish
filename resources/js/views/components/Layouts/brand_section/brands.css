@@ -1,0 +1,15 @@
+.brands{
+    position: relative;
+    margin-top: 120px;
+    background: url('./images/brands.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+.brands-svg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
