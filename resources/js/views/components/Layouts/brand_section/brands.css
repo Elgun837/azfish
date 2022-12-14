@@ -1,4 +1,4 @@
-.brands{
+.brands {
     position: relative;
     margin-top: 120px;
     background: url('./images/brands.jpg');
@@ -6,10 +6,41 @@
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
 }
-.brands-svg{
+
+.brands-svg {
     position: absolute;
     top: 0;
     width: 100%;
     height: auto;
+}
+
+.container.brands-section {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+
+.top-head,.mid-right {
+    color: white;
+    display: flex;
+}
+
+.top-head img {
+    padding-bottom: 20px;
+    padding-right: 15px;
+}
+.brands-button{
+height: 50px;
+width: 150px;
+border-radius: 5px;
+border:1px solid white;
+background: transparent;
+color: white;
+}
+.rigth-box-brands{
+    width: 30%;
 }
