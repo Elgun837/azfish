@@ -3,7 +3,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import "./carousel.css";
 import { useEffect, useState } from 'react';
 
-import YouTube from 'react-youtube';
 
 function MainCarousel() {
 
@@ -24,23 +23,23 @@ function MainCarousel() {
       })
       .catch(e => console.log(e));
   }, [refresh]);
- 
+
   const opts = {
     height: '768',
     width: '100%',
     playerVars: {
-      
+
       autoplay: 1,
     },
   }
 
 
   return (
-   
+
     <>
 
-      
-      <Carousel>
+
+      <Carousel keyboard={false} pauseOnHover={true}>
         {
           data.map((slider, i) => (
             slider.image ?
@@ -60,15 +59,14 @@ function MainCarousel() {
               :
               <Carousel.Item key={i}>
 
-                <YouTube
-                                   
-                  
-                  className="video-player"                     
-                  iframeClassName={slider.video} 
-                  id={'7uzvATY1mts'}
-                  opts={opts}         
+                <iframe src={`https://www.youtube.com/embed/${slider.video}?autoplay=1&mute=1`}
+                  frameBorder='0'
+                  allow='autoplay; encrypted-media'
+                  allowFullScreen
+                  title='video'
+                  width='100%'
+                  height="760px"
                 />
-
 
               </Carousel.Item>
           ))
