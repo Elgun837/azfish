@@ -15,7 +15,7 @@ class ManufacturerController extends ApiController
      */
     public function index()
     {
-        $data = Manufacturer::all();
+        $data = Manufacturer::where('status', 'ACTIVE')->get();
 
         if(!$data->count())
             return $this->errorResponse(trans('default.no_items'), 200);
