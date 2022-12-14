@@ -24,7 +24,7 @@
     display: flex;
 }
 .header-row p {
-    padding-right: 40px;
+    padding-right: 150px;
 }
 .about-h3{
     font-weight: 400;
@@ -42,7 +42,7 @@
     border-radius: 5px;
 }
 .right-box{
-    padding: 20px 0;
+    padding: 40px 0;
 }
 .horizontal-divider-uni {
     margin: 7px 0;
@@ -70,4 +70,8 @@ color: var(--text-color);
 }
 .header-box h2 {
     color: var(--text-color);
+    font-weight: 700;
+}
+.btn-svg-img{
+    padding: 5px;
 }

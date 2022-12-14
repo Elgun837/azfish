@@ -5,6 +5,7 @@ import fishIcon from "/images/fish-icon-fav.svg"
 import verifyIcon from "/images/verify.svg"
 import uniLogo1 from "/images/uni1.svg" 
 import uniLogo2 from "/images/uni2.svg" 
+import rightIcon from "/images/right.svg" 
 
 export default function About() {
   return (
@@ -43,7 +44,7 @@ export default function About() {
                 <hr className='horizontal-divider-uni'/>
                 <img src={uniLogo1} />
                 </div>
-                <button className='learn-button'>Learn more</button>
+                <button className='learn-button'>Learn more <img className='btn-svg-img' src={rightIcon} alt="svg" /> </button>
               </div>
             </div>
           </div>
