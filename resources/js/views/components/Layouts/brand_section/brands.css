@@ -55,3 +55,10 @@ img.p-5 {
     background: white;
    
 }
+.slide-cont{
+    background: transparent;
+    border: none;
+}
+.slider-button-container {
+    gap: 20px;
+}
