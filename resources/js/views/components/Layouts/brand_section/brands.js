@@ -1,11 +1,21 @@
 import React from 'react'
 import fishIconWhite from "/images/fish-white.svg"
 import "./brands.css"
-import rightIcon from "/images/right-white.svg" 
+import rightIcon from "/images/right-white.svg"
+import Slider from 'react-slick';
+import brandLogo1 from "/images/kura_caviar.png"
+import brandLogo2 from "/images/baku-caviar.png"
+import BrandSlider from './brandSlider';
+
 
 
 
 export default function Brands() {
+
+   
+
+
+
     return (
         <div className="brands">
             <svg className="brands-svg" width="1440" height="71" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1440 71" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +38,7 @@ export default function Brands() {
                     <button className='brands-button'>All Brands <img className='btn-svg-img' src={rightIcon} alt="svg" /> </button>
                 </div>
                 <div className='left-box-brands'>
-
+                    <BrandSlider />
                 </div>
 
             </div>

@@ -44,3 +44,14 @@ color: white;
 .rigth-box-brands{
     width: 30%;
 }
+.left-box-brands{
+    width: 70%;
+}
+.width-70{
+    width: 80%;
+    margin-right: 0 !important;
+}
+img.p-5 {
+    background: white;
+   
+}
