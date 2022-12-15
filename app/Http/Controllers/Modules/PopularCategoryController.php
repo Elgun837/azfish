@@ -20,7 +20,7 @@ class PopularCategoryController extends ApiController
 
         foreach ($categories as $key => $value) {
 
-            $cat = Category::where('id', $value->id);
+            $cat = Category::where('id', $value->id)->where('status', 'ACTIVE')->first();
 
             $data[] = [
                 'name' => $cat->getTranslatedAttribute('name', app()->getLocale(), 'en'),

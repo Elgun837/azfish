@@ -14,7 +14,7 @@ class CustomSelectFormField extends AbstractHandler
         $category = [];
         
         foreach (Category::all() as $value) {
-           $category[$value['name']] = $value['name'];
+           $category[$value['id']] = $value['name'];
         }
         $options = $category;
         
