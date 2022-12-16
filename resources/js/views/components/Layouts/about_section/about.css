@@ -24,7 +24,7 @@
     display: flex;
 }
 .header-row p {
-    padding-right: 150px;
+    padding-right: 50px;
 }
 .about-h3{
     font-weight: 400;
@@ -58,7 +58,7 @@
 }
 .foot-row{
     display: grid;
-    gap: 40px;
+    gap: 20px;
 }
 .learn-button{
 height: 50px;

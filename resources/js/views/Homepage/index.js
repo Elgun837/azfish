@@ -4,6 +4,7 @@ import Carousel from '../components/carousel';
 import About from '../components/Layouts/about_section/about';
 import Brands from '../components/Layouts/brand_section/brands';
 import PopularCatefories from '../components/Layouts/popular_categories/popularCatefories';
+import Partners from '../components/Layouts/partners/partners';
 
 
 function Home() {
@@ -20,7 +21,7 @@ function Home() {
         <About />
         <Brands />
         <PopularCatefories />
-
+        <Partners />
       </Layout>
    
     

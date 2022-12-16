@@ -24,14 +24,7 @@ function MainCarousel() {
       .catch(e => console.log(e));
   }, [refresh]);
 
-  const opts = {
-    height: '768',
-    width: '100%',
-    playerVars: {
-
-      autoplay: 1,
-    },
-  }
+ 
 
 
   return (
