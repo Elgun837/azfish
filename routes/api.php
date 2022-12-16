@@ -7,6 +7,7 @@ use App\Http\Controllers\Catalog\ProductController;
 use App\Http\Controllers\Catalog\CategoryController;
 use App\Http\Controllers\Catalog\ManufacturerController;
 use App\Http\Controllers\Modules\PopularCategoryController;
+use App\Http\Controllers\Modules\PartnersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,7 @@ Route::group(['middleware' => 'apichecker'], function(): void {
     Route::get('manufacturer/{id}', [ManufacturerController::class, 'show'])->name('manufacturer.show');
 
     Route::get('popular_category', [PopularCategoryController::class, 'index'])->name('popular_category');
+
+    Route::get('partners', [PartnersController::class, 'index'])->name('partners');
 
 });
