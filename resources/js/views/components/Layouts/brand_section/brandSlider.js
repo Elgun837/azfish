@@ -56,7 +56,7 @@ export default function BrandSlider() {
             >
                 {
                  data.map((brands, i) => (
-                <SwiperSlide key={i}><Link to={brands.slug}> <img className='p-5' src={`/storage/${brands.image}`} /></Link></SwiperSlide>
+                <SwiperSlide key={i}><Link to={brands.slug}> <img className='img-fluid p-5' src={`/storage/${brands.image}`} /></Link></SwiperSlide>
                 
                 
                 ))

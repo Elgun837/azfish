@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import catImg1 from '/images/fresh-fish.png'
 import catImg2 from '/images/ice-fish.png'
-import catImg3 from '/images/salted-fish.png'
+import catImg3 from '/images/caviar.png'
 
 export default function popularCatefories() {
     return (
