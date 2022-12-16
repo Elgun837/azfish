@@ -10,7 +10,7 @@ export default function popularCatefories() {
                 <img className='svg-img' src={fishIcon} alt="svg" />
                 <h2>Popular Categories</h2>
             </div>
-            <Link to="">Get to know all our categories of products -></Link>
+            <Link to="">Get to know all our categories of products -</Link>
 
         </div>
     )
