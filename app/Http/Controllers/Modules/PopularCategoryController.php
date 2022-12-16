@@ -14,7 +14,7 @@ class PopularCategoryController extends ApiController
         $popular_category_info = PopularCategory::orderBy('id')->first();
         $data = [];
 
-        if(!$popular_category_info->count()) {
+        if(!$popular_category_info) {
             return $this->errorResponse(trans('default.no_items'), 200);
         }
 
