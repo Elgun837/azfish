@@ -23,12 +23,18 @@ class PopularCategoryController extends ApiController
         foreach ($categories as $key => $value) {
             $cat = Category::where('id', $value)->where('status', 'ACTIVE')->first();
             
-            $data[] = [
-                'id' => $cat['id'],
-                'name' => $cat->getTranslatedAttribute('name', app()->getLocale(), 'en'),
-                'image' => $cat['image'],
-                'slug' => $cat->getTranslatedAttribute('slug', app()->getLocale(), 'en')
-            ];
+            if($cat) {
+                $data[] = [
+                    'id' => $cat['id'],
+                    'name' => $cat->getTranslatedAttribute('name', app()->getLocale(), 'en'),
+                    'image' => $cat['image'],
+                    'slug' => $cat->getTranslatedAttribute('slug', app()->getLocale(), 'en')
+                ];
+            }            
+        }
+
+        if(empty($data)) {
+            return $this->errorResponse(trans('default.no_items'), 200);
         }
 
         return $this->successResponse($data, 200);
