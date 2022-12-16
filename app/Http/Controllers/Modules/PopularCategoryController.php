@@ -27,7 +27,7 @@ class PopularCategoryController extends ApiController
                 'id' => $cat['id'],
                 'name' => $cat->getTranslatedAttribute('name', app()->getLocale(), 'en'),
                 'image' => $cat['image'],
-                'slug' => $cat->getTranslateAttribute('slug', app()->getlocale(), 'en')
+                'slug' => $cat->getTranslatedAttribute('slug', app()->getLocale(), 'en')
             ];
         }
 
