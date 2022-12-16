@@ -1,3 +1,4 @@
+
 .pop_cat-section {
     margin-top: 75px;
     margin-bottom: 75px;
@@ -14,15 +15,28 @@
     ;
     
 }
+.link-exp{
+    color: #004471;
+}
+.heaeder-column {
+    display: grid;
+    gap: 20px;
+}
 .category-item h4 {
     padding-top: 38px;
-    
+    color: white;
 }
 
 .category-img{
     max-width: 100%;
     padding-top: 34%;
 }
+.category-item a {
+    text-decoration: none;
+}
 .category-holder{
     gap: 60px;
+}
+.pop-catefory-holder {
+    padding: 50px 0;
 }
