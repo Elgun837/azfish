@@ -6,7 +6,7 @@ use App\Http\Controllers\Catalog\SliderController;
 use App\Http\Controllers\Catalog\ProductController;
 use App\Http\Controllers\Catalog\CategoryController;
 use App\Http\Controllers\Catalog\ManufacturerController;
-use App\Http\Controllers\Modules\PopularCategory;
+use App\Http\Controllers\Modules\PopularCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +32,6 @@ Route::group(['middleware' => 'apichecker'], function(): void {
 
     Route::get('manufacturer/{id}', [ManufacturerController::class, 'show'])->name('manufacturer.show');
 
-    Route::get('popular_category', [PopularCategory::class, 'index'])->name('popular_category');
+    Route::get('popular_category', [PopularCategoryController::class, 'index'])->name('popular_category');
 
 });

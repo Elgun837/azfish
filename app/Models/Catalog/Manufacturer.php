@@ -4,12 +4,22 @@ namespace App\Models\Catalog;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Traits\Translatable;
 
 class Manufacturer extends Model
 {
-    use HasFactory;
+    use HasFactory, Translatable;
 
     protected $table = 'manufacturer';
+
+    protected $translatable = [
+        'description'
+    ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 
 
     /**
