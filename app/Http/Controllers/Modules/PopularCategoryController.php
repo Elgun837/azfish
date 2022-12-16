@@ -11,20 +11,21 @@ class PopularCategoryController extends ApiController
 {
     public function index()
     {
-        $categories = PopularCategory::all();
+        $popular_category_info = PopularCategory::orderBy('id')->first();
         $data = [];
 
-        if(!$categories->count()) {
+        if(!$popular_category_info->count()) {
             return $this->errorResponse(trans('default.no_items'), 200);
         }
 
+        $categories = json_decode( $popular_category_info['categories'], true );
+
         foreach ($categories as $key => $value) {
-            
-            $cat = Category::where('id', $value['id'])->where('status', 'ACTIVE')->first();
+            $cat = Category::where('id', $value)->where('status', 'ACTIVE')->first();
             
             $data[] = [
                 'name' => $cat->getTranslatedAttribute('name', app()->getLocale(), 'en'),
-                'image' => $value->image
+                'image' => $cat['image']
             ];
         }
 
