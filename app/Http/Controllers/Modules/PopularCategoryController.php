@@ -24,8 +24,10 @@ class PopularCategoryController extends ApiController
             $cat = Category::where('id', $value)->where('status', 'ACTIVE')->first();
             
             $data[] = [
+                'id' => $cat['id'],
                 'name' => $cat->getTranslatedAttribute('name', app()->getLocale(), 'en'),
-                'image' => $cat['image']
+                'image' => $cat['image'],
+                'slug' => $cat->getTranslatedAttribute('slug', app()->getLocale(), 'en')
             ];
         }
 
