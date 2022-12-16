@@ -1,3 +1,23 @@
-.pop_cat-section{
+.pop_cat-section {
     margin-top: 75px;
+}
+
+.category-item {
+    text-align: center;
+    background: url(./images/tarelka.png);
+    background-size: cover;
+    background-position: top;
+    background-color: #00A9AE;
+    background-repeat: no-repeat;
+    
+}
+.category-item h4 {
+    padding-top: 38px;
+}
+
+.category-img{
+    max-width: 100%;
+}
+.category-holder{
+    gap: 60px;
 }
