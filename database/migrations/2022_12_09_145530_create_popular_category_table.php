@@ -15,7 +15,7 @@ class CreatePopulaCategoryTable extends Migration
     {
         Schema::create('popular_category', function (Blueprint $table) {
             $table->increments('id');
-            $table->json('categories')->nullable;
+            $table->json('categories')->nullable();
             $table->timestamps();
         });
     }

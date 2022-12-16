@@ -10,4 +10,14 @@ class PopularCategory extends Model
     use HasFactory;
 
     protected $table = 'popular_category';
+
+
+    public function save(array $option = [])
+    {
+        $request = \Request::all();
+
+        $this->categories = json_encode($request['categories'] ?? null);
+
+        parent::save();
+    }
 }

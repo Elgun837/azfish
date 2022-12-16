@@ -2,10 +2,12 @@
 @import "../../../css/app.css";
 .carousel-inner {
     z-index: -3;
+    max-height: 768px;
 }
 .carousel.slide {
     top: -200px;
     margin-bottom: -260px;
+    
 }
 .slider-caption.carousel-caption {
     top: 40%;
