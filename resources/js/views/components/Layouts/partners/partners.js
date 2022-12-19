@@ -1,14 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, {Pagination, Navigation, Autoplay} from 'swiper';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./partners.css"
+import 'swiper/css/pagination';
+
+SwiperCore.use([Navigation, Pagination, Autoplay])
 export default function Partners() {
     const [data, setData] = useState([]);
     const [refresh, setRefresh] = useState(false);
     const [swiper, setSwiper] = React.useState(null);
    
-
+   
     
     useEffect(() => {
         axios.get(`/api/partners`, {
@@ -29,11 +33,15 @@ export default function Partners() {
     return (
         <>
         <div className='partners container'>
-        <Swiper className='partners-slide'
+        <Swiper  className='partners-slide'
                 spaceBetween={15}
                 slidesPerView={5}
                 loop={true}
-                navigation={true}
+                pagination={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
                 onSwiper={(s) => {
                     
                     setSwiper(s);
