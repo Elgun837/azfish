@@ -26,7 +26,7 @@ export default function Brands() {
                 <div className='rigth-box-brands'>
                     <div className="top-head">
                         <img className='svg-img' src={fishIconWhite} alt="svg" />
-                        <h2>About us</h2>
+                        <h2>Brands</h2>
                     </div>
                     <div className="mid-right">
                         <p>

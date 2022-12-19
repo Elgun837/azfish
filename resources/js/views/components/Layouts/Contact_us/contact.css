@@ -1,0 +1,12 @@
+.contact-us.container {
+    display: flex;
+    flex-direction: row;
+}
+.contact_form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.left-side-contact.col{
+    background: url('./images/lead-bg-1.jpg');
+}

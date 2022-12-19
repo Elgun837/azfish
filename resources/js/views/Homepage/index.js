@@ -5,6 +5,7 @@ import About from '../components/Layouts/about_section/about';
 import Brands from '../components/Layouts/brand_section/brands';
 import PopularCatefories from '../components/Layouts/popular_categories/popularCatefories';
 import Partners from '../components/Layouts/partners/partners';
+import Contact_us from '../components/Layouts/Contact_us/contact_us';
 
 
 function Home() {
@@ -22,6 +23,7 @@ function Home() {
         <Brands />
         <PopularCatefories />
         <Partners />
+        <Contact_us />
       </Layout>
    
     
