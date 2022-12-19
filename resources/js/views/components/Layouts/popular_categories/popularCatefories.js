@@ -30,7 +30,7 @@ export default function popularCatefories() {
       }, [refresh]);
     
 
-      console.log(data)
+    
 
     return (
         <div className="pop_cat-section container">

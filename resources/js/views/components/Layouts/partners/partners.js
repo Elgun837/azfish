@@ -25,7 +25,7 @@ export default function Partners() {
     return (
         <>
         <div className='partners container'>
-            <Carousel keyboard={false} pauseOnHover={true}>
+            <Carousel className="partner-slider" keyboard={false} pauseOnHover={true}>
 
                 {data.map((partners, i) => {
                     <Carousel.Item key={i}>

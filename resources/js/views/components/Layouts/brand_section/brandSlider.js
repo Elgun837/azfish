@@ -39,7 +39,7 @@ export default function BrandSlider() {
       }, [refresh]);
     
 
-      console.log(data)
+      
 
 
     return (
