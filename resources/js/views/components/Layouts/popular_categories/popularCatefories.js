@@ -45,7 +45,7 @@ export default function popularCatefories() {
                 <Row className='category-holder '>
                     {data.slice(0,3).map((item, i) => (
                 
-                <Col className='category-item'>
+                <Col className='category-item' key={i}> 
                     <Link to="#">
                         <h4>{item.name}</h4>
                         <img className='category-img img-fluid' src={`/storage/${item.image}`}/>

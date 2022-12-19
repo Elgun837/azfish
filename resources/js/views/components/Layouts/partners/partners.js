@@ -1,11 +1,15 @@
-import Carousel from 'react-bootstrap/Carousel';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react';
 import { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import "./partners.css"
 export default function Partners() {
     const [data, setData] = useState([]);
-
     const [refresh, setRefresh] = useState(false);
+    const [swiper, setSwiper] = React.useState(null);
+   
+
+    
     useEffect(() => {
         axios.get(`/api/partners`, {
 
@@ -25,23 +29,26 @@ export default function Partners() {
     return (
         <>
         <div className='partners container'>
-            <Carousel className="partner-slider" keyboard={false} pauseOnHover={true}>
-
-                {data.map((partners, i) => {
-                    <Carousel.Item key={i}>
-                        <img
-                            className="d-block w-100"
-                            src={`/storage/${partners.image}`}
-                            alt="First slide"
-                        />
-
-
-                    </Carousel.Item>
+        <Swiper className='partners-slide'
+                spaceBetween={15}
+                slidesPerView={5}
+                loop={true}
+                navigation={true}
+                onSwiper={(s) => {
+                    
+                    setSwiper(s);
+                  }}
+            >
+                {
+                 data.map((partners, i) => (
+                <SwiperSlide key={i}><Link to={partners.link}> <img className='img-fluid p-5' src={`/storage/${partners.image}`} /></Link></SwiperSlide>
+                
+                
+                ))
                 }
-
-                )}
-
-            </Carousel>
+                
+                
+            </Swiper>
             </div>
         </>
 

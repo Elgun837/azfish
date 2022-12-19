@@ -1,7 +1,5 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import brandLogo1 from "/images/kura_caviar.png"
-import brandLogo2 from "/images/baku-caviar.png"
 import rigthSlide from "/images/right-slide.svg"
 import leftSlide from "/images/left-slide.svg"
 import { useEffect, useState } from 'react';
