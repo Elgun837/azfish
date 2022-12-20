@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./partners.css"
 import 'swiper/css/pagination';
+import fishIcon from "/images/fish-icon-fav.svg"
 
 SwiperCore.use([Navigation, Pagination, Autoplay])
 export default function Partners() {
@@ -32,7 +33,14 @@ export default function Partners() {
    
     return (
         <>
+        <div className='header-box partners-box'>
+                  <img className='svg-img' src={fishIcon} alt="svg" />
+                  <h2>Partners</h2>
+        </div>
         <div className='partners container'>
+
+
+
         <Swiper  className='partners-slide'
                 spaceBetween={15}
                 slidesPerView={5}
