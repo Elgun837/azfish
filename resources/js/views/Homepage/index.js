@@ -6,6 +6,7 @@ import Brands from '../components/Layouts/brand_section/brands';
 import PopularCatefories from '../components/Layouts/popular_categories/popularCatefories';
 import Partners from '../components/Layouts/partners/partners';
 import Contact_us from '../components/Layouts/Contact_us/contact_us';
+import Footer from '../components/Layouts/footer_section/footer';
 
 
 function Home() {
@@ -24,6 +25,7 @@ function Home() {
         <PopularCatefories />
         <Partners />
         <Contact_us />
+        <Footer />
       </Layout>
    
     
