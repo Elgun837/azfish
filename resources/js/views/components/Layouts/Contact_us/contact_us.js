@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import rigthSlide from "/images/right-slide.svg"
 import leftSlide from "/images/left-slide.svg"
 import SwiperCore, {Pagination, Navigation, Autoplay} from 'swiper';
+import 'swiper/scss/navigation';
 
 export default function Contact_us() {
 
@@ -76,7 +77,7 @@ export default function Contact_us() {
                             <input type="number" name='phone' placeholder='Phone' required />
                             <input type="text" name="company" placeholder='Company name' required />
                             <textarea name="message" rows="7" placeholder='Your Messages' required></textarea>
-                            <button type='submit' className='btn btn-primary'>Send</button>
+                            <button type='submit' className='btn btn-primary mail-send-button'>Send</button>
                         </form>
                     </div>
                 </div>

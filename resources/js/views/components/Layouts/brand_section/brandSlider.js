@@ -46,7 +46,7 @@ export default function BrandSlider() {
                 spaceBetween={35}
                 slidesPerView={2}
                 loop={true}
-                navigation={true}
+                navigation={false}
                 onSwiper={(s) => {
                     
                     setSwiper(s);
