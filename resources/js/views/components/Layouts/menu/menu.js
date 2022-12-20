@@ -36,10 +36,10 @@ export default function menu() {
           <Modal.Title></Modal.Title>
         </Modal.Header>
         <Modal.Body >
-         <div className='left-menu'>
+         <div className='left-menu col'>
          <ul>
             <li><Link to=''>About us</Link></li>
-            <li><Link to=''>Brands & products</Link></li>
+            <li><Link to='/contact-us'>Contacts</Link></li>
             <li><Link to=''>Sustainability</Link></li>
             <li><Link to=''>Production</Link></li>
             <li><Link to=''>Media</Link></li>
