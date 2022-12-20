@@ -25,11 +25,57 @@ export default function Footer() {
         </div>
     </section>
     <section className='footer-bottom container'>
-        <div className='footer-col col'></div>
-        <div className='footer-col col'></div>
-        <div className='footer-col col'></div>
-        <div className='footer-col col'></div>
-        <div className='footer-col col'></div>
+        <div className='footer-col col'>
+            <h5 className='nav-header'>About us</h5>
+            <ul>
+                <li>We are today</li>
+                <li>Mission and values</li>
+                <li>Retail</li>
+                <li>Contacts</li>
+                <li>Feedback</li>
+            </ul>
+        </div>
+        <div className='footer-col col'>
+            <h5 className='nav-header'>Brands & products</h5>
+            <ul>
+                <li>We are today</li>
+                <li>Mission and values</li>
+                <li>Retail</li>
+                <li>Contacts</li>
+                <li>Feedback</li>
+            </ul>
+        </div>
+        <div className='footer-col col'>
+            <h5 className='nav-header'>Sustainability</h5>
+            <ul>
+                <li>We are today</li>
+                <li>Mission and values</li>
+                <li>Retail</li>
+                <li>Contacts</li>
+                <li>Feedback</li>
+            </ul>
+        </div>
+        <div className='footer-col col'>
+            <h5 className='nav-header'>Production</h5>
+            <ul>
+                <li>We are today</li>
+                <li>Mission and values</li>
+                <li>Retail</li>
+                <li>Contacts</li>
+                <li>Feedback</li>
+            </ul>
+        </div>
+        <div className='footer-col col'>
+            <h5 className='nav-header'>Contact</h5>
+            <ul>
+                <li>We are today</li>
+                <li>Mission and values</li>
+                <li>Retail</li>
+                <li>Contacts</li>
+                <li>Feedback</li>
+            </ul>
+        </div>
+        
     </section>
     <section className='footer-bottom' >
         <img className='img-fluid w-100' src={underSea} />

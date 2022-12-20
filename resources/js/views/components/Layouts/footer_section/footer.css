@@ -10,11 +10,26 @@ section.subscribe_section {
 .subscribes.container {
     display: flex;
     align-items: center;
-    padding: 44px;
+   
 }
 .right-sub.col img{
     mix-blend-mode: darken;
 }
+.footer-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+.footer-col.col ul {
+    list-style: none;
+    padding-left:0!important;
+    line-height: 40px;
+}
+
+
+
+
 @media (min-width:1441px){
     section.subscribe_section{
         margin:  150px auto 10px auto;
