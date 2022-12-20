@@ -29,7 +29,7 @@ export default function Partners() {
             .catch(e => console.log(e));
     }, [refresh]);
 
-    console.log(data)
+   
     return (
         <>
         <div className='partners container'>
