@@ -22,9 +22,39 @@ padding: 0 145px;
     top: 50%;
     z-index: 9;
 }
-form.contact_form input {
+form.contact_form input, textarea {
     border-radius: 10px;
     padding: 18px;
     border: 1px solid rgba(203, 213, 225, 1);
     background: rgba(248, 250, 252, 1);
+}
+.mail-send-button{
+    background: #004471;
+}
+.mailer-header{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #004471;
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+    background: rgba(255, 255, 255, 0.26);
+    padding: 30px;
+    border-radius: 50px;
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+    color: white;
+    font-size:28px!important;
+}
+
+@media (min-width:1441px){
+    .mail-section{
+        padding: 0 65px;
+        
+    }
+    .absolute-slide{
+        width: 38vw;
+    }
 }
