@@ -38,7 +38,7 @@ export default function menu() {
         <Modal.Body >
          <div className='left-menu col'>
          <ul>
-            <li><Link to=''>About us</Link></li>
+            <li><Link to='/about-us'>About us</Link></li>
             <li><Link to='/contact-us'>Contacts</Link></li>
             <li><Link to=''>Sustainability</Link></li>
             <li><Link to=''>Production</Link></li>
