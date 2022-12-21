@@ -61,3 +61,20 @@
 .left-menu ul li a.selected {
     color: rgb(255, 255, 255);
 }
+.menu-header-logo{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    width: 100%;
+}
+button.btn-close{
+    margin: 0!important;
+    display: flex;
+    align-self: center;
+}
+.menu-section nav ul{
+    margin: 0!important;
+}
+.menu-section{
+    align-self: center;
+}

@@ -37,7 +37,7 @@ export default function menu() {
       ))}
       <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
-          <div className='header'>
+          <div className='header menu-header-logo'>
             
             <Container className='heaeder-section-modal'>
               <div className='logo-section'>
