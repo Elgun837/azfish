@@ -13,3 +13,38 @@
     border: none!important;
     padding: 0!important;
 }
+.modal-content{
+    background: linear-gradient(90deg, #06797C 0%, #1E9FA3 50.86%, #01787B 98.65%)!important;
+}
+.modal-header{
+    border-bottom: 1px solid #ffffff4d;
+    
+}
+.modal-body{
+    padding: 0!important;
+}
+.left-menu {
+    border-right: 1px solid #FFFFFF4d;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3;
+    
+}
+.right-menu{
+    width: 60%;
+}
+
+.left-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+.left-menu ul {
+    list-style: none;
+}
+.btn-close{
+    filter: invert(1);
+}

@@ -1,0 +1,9 @@
+.title_section{
+    height: 316px;
+    background: linear-gradient(5.09deg, #004471 26.67%, #0161A0 93.91%);
+    margin-top: -96px;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 125px;
+}
