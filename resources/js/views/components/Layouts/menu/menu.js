@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "./menu.css";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import LogoIMG from '/images/aff-logo.svg'
 
 
@@ -37,7 +37,7 @@ export default function menu() {
       ))}
       <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
-          <div className='header'>
+          <div className='header menu-header-logo'>
             
             <Container className='heaeder-section-modal'>
               <div className='logo-section'>
@@ -65,12 +65,12 @@ export default function menu() {
         <Modal.Body >
           <div className='left-menu col'>
             <ul>
-              <li><Link to='/about-us'>About us</Link></li>
-              <li><Link to='/contact-us'>Contacts</Link></li>
-              <li><Link to=''>Sustainability</Link></li>
-              <li><Link to=''>Production</Link></li>
-              <li><Link to=''>Media</Link></li>
-              <li><Link to=''>Career</Link></li>
+              <li><NavLink activeClassName="selected" to='/about-us' >About us</NavLink></li>
+              <li><NavLink activeClassName="selected" to='/contact-us'>Contacts</NavLink></li>
+              <li><NavLink activeClassName="selected" to='/sustainability'>Sustainability</NavLink></li>
+              <li><NavLink activeClassName="selected" to='/test'>Production</NavLink></li>
+              <li><NavLink activeClassName="selected" to='/test'>Media</NavLink></li>
+              <li><NavLink activeClassName="selected" to='/test'>Career</NavLink></li>
             </ul>
           </div>
           <div className='right-menu'></div>
