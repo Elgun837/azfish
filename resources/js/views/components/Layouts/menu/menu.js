@@ -6,7 +6,10 @@ import Modal from 'react-bootstrap/Modal';
 import "./menu.css";
 import { Link, NavLink } from 'react-router-dom';
 import LogoIMG from '/images/aff-logo.svg'
-
+import youtubeSvg from '/images/youtube.svg'
+import facebookSvg from '/images/facebook.svg'
+import googleSvg from '/images/google.svg'
+import instagramSvg from '/images/instagram.svg'
 
 import Container from 'react-bootstrap/Container';
 
@@ -45,7 +48,7 @@ export default function menu() {
               </div>
               
             </Container>
-            <div className='menu-section'>
+            <div className='menu-section modal-menu'>
                 <nav>
                   <ul>
 
@@ -72,6 +75,15 @@ export default function menu() {
               <li><NavLink activeClassName="selected" to='/test'>Media</NavLink></li>
               <li><NavLink activeClassName="selected" to='/test'>Career</NavLink></li>
             </ul>
+
+            <div className='social-media-icons'>
+                <ul className='social-share'>
+                  <li><img src={facebookSvg} /></li>
+                  <li><img src={instagramSvg} /></li>
+                  <li><img src={youtubeSvg} /></li>
+                  <li><img src={googleSvg} /></li>
+                </ul>
+            </div>
           </div>
           <div className='right-menu'></div>
         </Modal.Body>
