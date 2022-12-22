@@ -22,11 +22,11 @@ export default function Footer() {
                                     className='sub-input'
                                     name="s"
                                     id="s"
-                                    placeholder="Search here"
+                                    placeholder="Enter your email Address"
                                 />
 
                                 <button type="submit" id="subscribe-button">
-                                Enter your email Address
+                                    Subscribe
                                 </button>
                             </form>
                         </div>
