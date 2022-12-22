@@ -41,7 +41,7 @@ button#searchsubmit {
     left: 22px;
 }
 
-form {
+#search-form {
     position: relative;
     align-items: center;
     display: flex;

@@ -10,10 +10,22 @@ export default function Footer() {
     <section className='subscribe_section'>
         <div className='subscribes container'>
             <div className='left-sub col'>
-                <h5>Subscribe to the newsletter from Azerbaijan Fish Farm</h5>
+                <h5 className='blue-heading'>Subscribe to the newsletter from Azerbaijan Fish Farm</h5>
                 <p>1 email per week with updates on marketing, support and sales</p>
                 <div className='sub_mail'>
-
+                <form id='subscribe-form'>
+                <input
+                  type="search"
+                  className='sub-input'
+                  name="s"
+                  id="s"
+                  placeholder="Search here"
+                />
+                
+                <button type="submit" id="subscribe-button">
+                Subscribe
+                </button>
+              </form>
                 </div>
                 <div className='social_media_section'>
 

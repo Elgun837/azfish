@@ -64,7 +64,7 @@ export default function SearchBar() {
         <Modal.Body >
           <div className='wide-search col'>
             <div className='search-section'>
-              <form>
+              <form id='search-form'>
                 <input
                   type="search"
                   className='search-bar-modal'

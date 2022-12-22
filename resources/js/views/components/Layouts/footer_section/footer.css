@@ -31,7 +31,31 @@ section.subscribe_section {
     justify-content: center;
 }
 
+.blue-heading{
+    color: rgba(0, 68, 113, 1);
+}
+.sub-input {
+    width: 100%;
+    padding: 11px;
+    border-radius: 5px;
+    border: none;
+}
 
+button#subscribe-button {
+    position: absolute;
+    right: 5px;
+    border: none;
+    background: rgba(0, 68, 113, 1);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+form#subscribe-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
 @media (min-width:1441px){
     section.subscribe_section{
