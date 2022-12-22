@@ -34,7 +34,8 @@
     width: 40%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     line-height: 3;
 
@@ -77,4 +78,32 @@ button.btn-close{
 }
 .menu-section{
     align-self: center;
+}
+.menu-section.modal-menu nav ul li:last-child{
+    padding: 0 10px;
+}
+.modal-menu hr.horizontal-divider {
+    margin: 5px 0;
+    border: 1px solid;
+    opacity: 1;
+    color: white;
+    transform: translate(0%, 0%);
+}
+ul.social-share {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+}
+ul.social-share li {
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 50%;
+    line-height: 1;
+}
+ul.social-share img {
+    width: 1.2rem;
+}
+.left-menu ul{
+    padding-left: 0;
 }
