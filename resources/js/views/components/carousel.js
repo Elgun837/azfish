@@ -12,7 +12,7 @@ function MainCarousel() {
   useEffect(() => {
     axios.get(`/api/slider`, {
       headers:{
-        "apiLocale": "az"
+        "apiLocale": "en"
       }
     })
       .then((res) => {
