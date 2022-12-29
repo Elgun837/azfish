@@ -8,6 +8,7 @@ use App\Http\Controllers\Catalog\CategoryController;
 use App\Http\Controllers\Catalog\ManufacturerController;
 use App\Http\Controllers\Modules\PopularCategoryController;
 use App\Http\Controllers\Modules\PartnersController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,7 @@ Route::group(['middleware' => 'apichecker'], function(): void {
     Route::get('partners', [PartnersController::class, 'index'])->name('partners');
 
     Route::post('newsletter', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+
+    Route::post('search', [SearchController::class, 'index'])->name('search.index');
 
 });
