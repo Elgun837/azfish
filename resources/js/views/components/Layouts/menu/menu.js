@@ -12,8 +12,8 @@ import googleSvg from '/images/google.svg'
 import instagramSvg from '/images/instagram.svg'
 
 import Container from 'react-bootstrap/Container';
-
-
+import About from '../about_section/about';
+import Contact_us from '../Contact_us/contact_us';
 
 
 export default function menu() {
@@ -41,48 +41,49 @@ export default function menu() {
       <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
           <div className='header menu-header-logo'>
-            
+
             <Container className='heaeder-section-modal'>
               <div className='logo-section'>
                 <Link to="/"> <img src={LogoIMG} /></Link>
               </div>
-              
+
             </Container>
             <div className='menu-section modal-menu'>
-                <nav>
-                  <ul>
+              <nav>
+                <ul>
 
 
-                    <li><Link to="/az">Az</Link></li>
-                    <hr className='horizontal-divider' />
-                    <li><Link to="/ru">Ru</Link></li>
+                  <li><Link to="/az">Az</Link></li>
+                  <hr className='horizontal-divider' />
+                  <li><Link to="/ru">Ru</Link></li>
 
-                    
-                    
-                  </ul>
 
-                </nav>
-              </div>
+
+                </ul>
+
+              </nav>
+            </div>
           </div>
         </Modal.Header>
         <Modal.Body >
           <div className='left-menu col'>
             <ul>
-              <li><NavLink activeClassName="selected" to='/about-us' >About us</NavLink></li>
-              <li><NavLink activeClassName="selected" to='/contact-us'>Contacts</NavLink></li>
-              <li><NavLink activeClassName="selected" to='/sustainability'>Sustainability</NavLink></li>
-              <li><NavLink activeClassName="selected" to='/test'>Production</NavLink></li>
-              <li><NavLink activeClassName="selected" to='/test'>Media</NavLink></li>
-              <li><NavLink activeClassName="selected" to='/test'>Career</NavLink></li>
+              <li><NavLink activeClassName="selected" to={`${match.url}/about-us`} >About us</NavLink></li>
+              <li><NavLink activeClassName="selected" to={`${match.url}/contact-us`}>Contacts</NavLink></li>
+              <Switch>
+                <Route exact path={`${match.url}/about-us`} component={About} />
+                <Route path={`${match.url}/contact-us`} component={Contact_us} />
+
+              </Switch>
             </ul>
 
             <div className='social-media-icons'>
-                <ul className='social-share'>
-                  <li><img src={facebookSvg} /></li>
-                  <li><img src={instagramSvg} /></li>
-                  <li><img src={youtubeSvg} /></li>
-                  <li><img src={googleSvg} /></li>
-                </ul>
+              <ul className='social-share'>
+                <li><img src={facebookSvg} /></li>
+                <li><img src={instagramSvg} /></li>
+                <li><img src={youtubeSvg} /></li>
+                <li><img src={googleSvg} /></li>
+              </ul>
             </div>
           </div>
           <div className='right-menu'></div>

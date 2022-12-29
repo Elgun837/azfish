@@ -2,17 +2,17 @@ import Carousel from 'react-bootstrap/Carousel';
 
 import "./carousel.css";
 import { useEffect, useState } from 'react';
-
+import i18n from '../../i18n';
 
 function MainCarousel() {
-
+  const lang = i18n.language;
   const [data, setData] = useState([]);
 
   const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     axios.get(`/api/slider`, {
       headers:{
-        "apiLocale": "en"
+        "apiLocale": `${lang}`
       }
     })
       .then((res) => {

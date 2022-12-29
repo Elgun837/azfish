@@ -12,20 +12,14 @@ import { useTranslation } from 'react-i18next';
 
 function Home() {
 
-  const { t, i18n} = useTranslation();
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language)
-  }
+ 
+  
 
   return (
     
      
      <Layout>
         <Carousel />
-        <button onClick={() => changeLanguage("az")}>az</button>
-        <button onClick={() => changeLanguage("en")}>en</button>
-        <p>{t('text')}</p>
-        
         <About />
         <Brands />
         <PopularCatefories />
