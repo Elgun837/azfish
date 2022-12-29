@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\ApiControllers;
 
 use Illuminate\Http\Request;
 use App\Models\Catalog\Product;
-use Auth;
 
-class SearchController extends Controller
+class SearchController extends ApiController
 {
     public function index(Request $request)
     {
