@@ -37,4 +37,6 @@ Route::group(['middleware' => 'apichecker'], function(): void {
 
     Route::get('partners', [PartnersController::class, 'index'])->name('partners');
 
+    Route::post('newsletter', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+
 });
