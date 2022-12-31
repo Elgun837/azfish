@@ -1,7 +1,5 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import brandLogo1 from "/images/kura_caviar.png"
-import brandLogo2 from "/images/baku-caviar.png"
 import rigthSlide from "/images/right-slide.svg"
 import leftSlide from "/images/left-slide.svg"
 import { useEffect, useState } from 'react';
@@ -57,8 +55,6 @@ export default function BrandSlider() {
                 {
                  data.map((brands, i) => (
                 <SwiperSlide key={i}><Link to={brands.slug}> <img className='img-fluid p-5' src={`/storage/${brands.image}`} /></Link></SwiperSlide>
-                
-                
                 ))
                 }
                 <div className='slider-button-container d-flex justify-content-center pt-4'>
