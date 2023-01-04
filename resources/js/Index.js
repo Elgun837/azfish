@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import * as ReactDOM from 'react-dom';
 import Main from "./Router";
 import {BrowserRouter, Route} from 'react-router-dom';
 
-
+import "./i18n";
 
 class Index extends Component 
 {
@@ -12,7 +12,9 @@ class Index extends Component
        
             
             <BrowserRouter>
+            <Suspense fallback={<div>Loading ...</div>}>
                 <Route component={Main} />
+                </Suspense>
             </BrowserRouter>
        
         )

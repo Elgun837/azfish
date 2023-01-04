@@ -11,7 +11,9 @@ function MainCarousel() {
   const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     axios.get(`/api/slider`, {
-
+      headers:{
+        "apiLocale": "en"
+      }
     })
       .then((res) => {
 

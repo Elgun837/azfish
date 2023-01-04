@@ -1,15 +1,109 @@
-.menu-button{
+.menu-button {
     background: transparent;
     border: none;
     padding: 0;
 }
-.menu-button:hover{
+
+.menu-button:hover {
     background: transparent;
     border: none;
     padding: 0;
 }
-.menu-button:active{
-    background: transparent!important;
-    border: none!important;
-    padding: 0!important;
+
+.menu-button:active {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.modal-content {
+    background: linear-gradient(90deg, #06797C 0%, #1E9FA3 50.86%, #01787B 98.65%) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid #ffffff4d;
+
+}
+
+.modal-body {
+    padding: 0 !important;
+}
+
+.left-menu {
+    border-right: 1px solid #FFFFFF4d;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 3;
+
+}
+
+.right-menu {
+    width: 60%;
+}
+
+.left-menu ul li a {
+    color: rgba(255, 255, 255, 0.49);
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.left-menu ul {
+    list-style: none;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.left-menu ul li a.selected {
+    color: rgb(255, 255, 255);
+}
+.menu-header-logo{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    width: 100%;
+}
+button.btn-close{
+    margin: 0!important;
+    display: flex;
+    align-self: center;
+}
+.menu-section nav ul{
+    margin: 0!important;
+}
+.menu-section{
+    align-self: center;
+}
+.menu-section.modal-menu nav ul li:last-child{
+    padding: 0 10px;
+}
+.modal-menu hr.horizontal-divider {
+    margin: 5px 0;
+    border: 1px solid;
+    opacity: 1;
+    color: white;
+    transform: translate(0%, 0%);
+}
+ul.social-share {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+}
+ul.social-share li {
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 50%;
+    line-height: 1;
+}
+ul.social-share img {
+    width: 1.2rem;
+}
+.left-menu ul{
+    padding-left: 0;
 }

@@ -13,3 +13,40 @@
     border: none!important;
     padding: 0!important;
 }
+.wide-search.col ul.social-share {
+    justify-content: center;
+}
+.search-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 100px 0;
+}
+.search-bar-modal{
+    border-radius: 12px;
+    width: 800px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    background: transparent;
+    color: white;
+    padding:13px 86px;
+}
+.search-bar-modal::placeholder{
+    color: white;
+    
+}
+button#searchsubmit {
+    background: transparent;
+    border: none;
+    position: absolute;
+    left: 22px;
+}
+
+#search-form {
+    position: relative;
+    align-items: center;
+    display: flex;
+}
+
+button#searchsubmit img{
+    height: 25px;
+}

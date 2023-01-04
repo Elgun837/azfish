@@ -20,6 +20,7 @@ use App\Http\Controllers\Modules\PartnersController;
 |
 */
 
+
 Route::group(['middleware' => 'apichecker'], function(): void {
 
     Route::get('slider', [SliderController::class, 'index']);

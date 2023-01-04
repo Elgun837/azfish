@@ -37,7 +37,7 @@ export default function BrandSlider() {
       }, [refresh]);
     
 
-      console.log(data)
+      
 
 
     return (
@@ -46,7 +46,7 @@ export default function BrandSlider() {
                 spaceBetween={35}
                 slidesPerView={2}
                 loop={true}
-                navigation={true}
+                navigation={false}
                 onSwiper={(s) => {
                     
                     setSwiper(s);
@@ -55,6 +55,8 @@ export default function BrandSlider() {
                 {
                  data.map((brands, i) => (
                 <SwiperSlide key={i}><Link to={brands.slug}> <img className='img-fluid p-5' src={`/storage/${brands.image}`} /></Link></SwiperSlide>
+                
+                
                 ))
                 }
                 <div className='slider-button-container d-flex justify-content-center pt-4'>

@@ -2,6 +2,9 @@ import React from 'react'
 import fishIconWhite from "/images/fish-white.svg"
 import "./brands.css"
 import rightIcon from "/images/right-white.svg"
+import Slider from 'react-slick';
+import brandLogo1 from "/images/kura_caviar.png"
+import brandLogo2 from "/images/baku-caviar.png"
 import BrandSlider from './brandSlider';
 
 
@@ -23,7 +26,7 @@ export default function Brands() {
                 <div className='rigth-box-brands'>
                     <div className="top-head">
                         <img className='svg-img' src={fishIconWhite} alt="svg" />
-                        <h2>About us</h2>
+                        <h2>Brands</h2>
                     </div>
                     <div className="mid-right">
                         <p>
