@@ -1,8 +1,7 @@
 import React, { Component, Suspense } from "react";
 import * as ReactDOM from 'react-dom';
 import { render } from "react-dom";
-;
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Router } from 'react-router-dom';
 import store from "./stores";
 import { connect, Provider } from 'react-redux'
 import i18n from "./i18n";
@@ -10,9 +9,9 @@ import { I18nextProvider } from "react-i18next";
 import Homepage from "./views/Homepage";
 import About from "./views/About_us";
 import Contact from "./views/Contact_us";
-import { createBrowserHistory } from "history";
-import { Redirect, Switch } from "react-router-dom";
+import {  Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
+import {createBrowserHistory} from "history"
 
 
 
@@ -31,17 +30,18 @@ const generateLanguage = (locale, location) => {
         path: subPaths
     });
 };
-const history = createBrowserHistory();
+
 const lang = i18n.language;
 
 const changeLanguage = lng => {
     i18n.changeLanguage(lng);
   };
-let App = ({ match, location }) => {
+let App = ({ match }) => {
    
     const lang = useSelector(state => state.language);
     if (lang != match.params.locale) {
         changeLanguage(match.params.locale);
+        
     }
 return(
 
@@ -59,19 +59,19 @@ return(
 }
 
 
-
+const history = createBrowserHistory();
 
 const Index = ({ store, history }) => (
-
+   
     <I18nextProvider i18n={i18n}>
         <Provider store={store}>
-            <BrowserRouter >
-                <Suspense fallback={<div>Loading ...</div>}>
+            <Router history={history}>
+                <Suspense>
                     <Route path="/:locale" component={App} />
-                    
+                    <Redirect to={`/${lang}`} />
                 </Suspense>
-            </BrowserRouter>
+            </Router>
         </Provider>
     </I18nextProvider>
 )
-render(<Index store={store}/>, document.getElementById("index"));
+render(<Index store={store} history={history}/>, document.getElementById("index"));
