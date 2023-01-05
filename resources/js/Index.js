@@ -9,9 +9,10 @@ import { I18nextProvider } from "react-i18next";
 import Homepage from "./views/Homepage";
 import About from "./views/About_us";
 import Contact from "./views/Contact_us";
-import {  Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {createBrowserHistory} from "history"
+import { createBrowserHistory } from "history"
+import { loadLanguages } from "i18next";
 
 
 
@@ -31,19 +32,25 @@ const generateLanguage = (locale, location) => {
     });
 };
 
-const lang = i18n.language;
+
 
 const changeLanguage = lng => {
+
     i18n.changeLanguage(lng);
-  };
+
+};
+
+const lang = i18n.language;
 let App = ({ match }) => {
-   
-    const lang = useSelector(state => state.language);
+
+
+
     if (lang != match.params.locale) {
-        changeLanguage(match.params.locale);
         
+        changeLanguage(match.params.locale);
+
     }
-return(
+    return (
 
         <>
 
@@ -55,23 +62,26 @@ return(
             </Switch>
 
         </>
-        )
+    )
 }
 
 
 const history = createBrowserHistory();
+const url = location.pathname;
+console.log(url)
+
 
 const Index = ({ store, history }) => (
-   
+
     <I18nextProvider i18n={i18n}>
         <Provider store={store}>
             <Router history={history}>
                 <Suspense>
                     <Route path="/:locale" component={App} />
-                    <Redirect to={`/${lang}`} />
+                    <Redirect to={`${url}`} />
                 </Suspense>
             </Router>
         </Provider>
     </I18nextProvider>
 )
-render(<Index store={store} history={history}/>, document.getElementById("index"));
+render(<Index store={store} history={history} />, document.getElementById("index"));
