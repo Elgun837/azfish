@@ -8,6 +8,7 @@ use App\Http\Controllers\Catalog\CategoryController;
 use App\Http\Controllers\Catalog\ManufacturerController;
 use App\Http\Controllers\Modules\PopularCategoryController;
 use App\Http\Controllers\Modules\PartnersController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,9 @@ Route::group(['middleware' => 'apichecker'], function(): void {
     Route::get('popular_category', [PopularCategoryController::class, 'index'])->name('popular_category');
 
     Route::get('partners', [PartnersController::class, 'index'])->name('partners');
+
+    Route::get('search', [SearchController::class, 'index'])->name('search');
+
+    Route::get('search.autocomplete/{text}', [SearchController::class, 'autocomplete']);
 
 });
