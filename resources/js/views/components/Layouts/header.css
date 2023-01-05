@@ -42,3 +42,8 @@ hr.horizontal-divider {
   color: white;
   transform: translate(0%, -20%);
 }
+.trans-button{
+  background: transparent;
+  color: white;
+  border:none;
+}
