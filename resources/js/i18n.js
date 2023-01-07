@@ -17,7 +17,7 @@ const resources = {
 i18n.use(I18NextHttpBackend).use(LanguageDetector).use(initReactI18next).init({
  
   
-  fallbackLng: "az",
+  fallbackLng: "en",
   debug: true,
   resources,
   detection:{

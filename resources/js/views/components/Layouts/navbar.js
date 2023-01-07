@@ -4,8 +4,24 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Menu from './menu/menu';
 import SearchBar from './searchbar/searcjbar';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLanguage } from '../../../stores/language';
+import i18n from '../../../i18n';
+
+
 
 export default function navbar() {
+    
+    const changeLanguage = lang => {
+        i18n.changeLanguage(lang)
+        
+    }
+    const languages = [ 'en' , 'az'];
+
+
+
+
+
     return (
         <div className='header'>
             <svg width="1440" height="127" viewBox="0 0 1440 127" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,10 +38,12 @@ export default function navbar() {
                     <nav>
                         <ul>
                            
-
-                            <li><Link to="/az">Az</Link></li>
-                            <hr className='horizontal-divider'/>
-                            <li><Link to="/ru">Ru</Link></li>
+                            {languages.map((lang,index)=> (
+                                <li key={index}><button className='trans-button' onClick={() => changeLanguage(lang)} ><a href={`/${lang}`}>{lang}</a></button></li>
+                                
+                            ))}
+                            
+                            
                             
                             <Menu />
                             <SearchBar />

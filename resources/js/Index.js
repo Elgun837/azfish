@@ -1,24 +1,87 @@
 import React, { Component, Suspense } from "react";
 import * as ReactDOM from 'react-dom';
-import Main from "./Router";
-import {BrowserRouter, Route} from 'react-router-dom';
+import { render } from "react-dom";
+import { BrowserRouter, Redirect, Route, Router } from 'react-router-dom';
+import store from "./stores";
+import { connect, Provider } from 'react-redux'
+import i18n from "./i18n";
+import { I18nextProvider } from "react-i18next";
+import Homepage from "./views/Homepage";
+import About from "./views/About_us";
+import Contact from "./views/Contact_us";
+import { Switch } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { createBrowserHistory } from "history"
+import { loadLanguages } from "i18next";
 
-import "./i18n";
 
-class Index extends Component 
-{
-    render(){
-        return(
-       
-            
-            <BrowserRouter>
-            <Suspense fallback={<div>Loading ...</div>}>
-                <Route component={Main} />
-                </Suspense>
-            </BrowserRouter>
-       
-        )
+
+const generateLanguage = (locale, location) => {
+    const ROUTE = "/:locale/:path*";
+    const definePath = compile(ROUTE);
+    const routeComponents = PathToRegexp(ROUTE).exec(location.pathname);
+
+    let subPaths = null;
+    if (routeComponents && routeComponents[2]) {
+        subPaths = routeComponents[2].split("/");
     }
+
+    return definePath({
+        locale,
+        path: subPaths
+    });
+};
+
+
+
+const changeLanguage = lng => {
+
+    i18n.changeLanguage(lng);
+
+};
+
+const lang = i18n.language;
+let App = ({ match }) => {
+
+
+
+    if (lang != match.params.locale) {
+        
+        changeLanguage(match.params.locale);
+
+    }
+    return (
+
+        <>
+
+
+            <Switch>
+                <Route exact path={`${match.url}/`} component={Homepage}></Route>
+                <Route path={`${match.url}/about-us`} component={About}></Route>
+                <Route path={`${match.url}/contact-us`} component={Contact}></Route>
+            </Switch>
+
+        </>
+    )
 }
 
-ReactDOM.render(<Index/>, document.getElementById("index"));
+
+const history = createBrowserHistory();
+const url = location.pathname;
+console.log(url)
+
+
+const Index = ({ store, history }) => (
+
+    <I18nextProvider i18n={i18n}>
+        <Provider store={store}>
+            <Router history={history}>
+                <Suspense>
+                    <Route path="/:locale" component={App} />
+                    {location.pathname === "/" ? <Redirect to="/en" /> : '/az' }  
+                </Suspense>
+            </Router>
+        </Provider>
+    </I18nextProvider>
+)
+render(<Index store={store} history={history} />, document.getElementById("index"));

@@ -4,5 +4,3 @@ require('./Index');
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/app.css'
-
-console.log('');
