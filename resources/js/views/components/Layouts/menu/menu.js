@@ -22,6 +22,7 @@ export default function menu() {
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
 
+  console.log(location.pathname)
 
   function handleShow(breakpoint) {
     setFullscreen(breakpoint);
@@ -68,7 +69,7 @@ export default function menu() {
         <Modal.Body >
           <div className='left-menu col'>
             <ul>
-              <li><NavLink activeClassName="selected" to='/about-us' >About us</NavLink></li>
+              <li><NavLink activeClassName="selected" to={`${location.pathname}/about-us`} >About us</NavLink></li>
               <li><NavLink activeClassName="selected" to='/contact-us'>Contacts</NavLink></li>
               <li><NavLink activeClassName="selected" to='/sustainability'>Sustainability</NavLink></li>
               <li><NavLink activeClassName="selected" to='/test'>Production</NavLink></li>

@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-
+import { useTranslation } from 'react-i18next';
 import "./carousel.css";
 import { useEffect, useState } from 'react';
 import  i18n  from 'i18next';
@@ -26,7 +26,7 @@ function MainCarousel() {
       .catch(e => console.log(e));
   }, [refresh]);
 
- 
+ const t = useTranslation();
 
 
   return (

@@ -1,18 +1,15 @@
 import React, { Component, Suspense } from "react";
-import * as ReactDOM from 'react-dom';
 import { render } from "react-dom";
-import { BrowserRouter, Redirect, Route, Router } from 'react-router-dom';
+import {  Redirect, Route, Router } from 'react-router-dom';
 import store from "./stores";
-import { connect, Provider } from 'react-redux'
+import { Provider } from 'react-redux'
 import i18n from "./i18n";
 import { I18nextProvider } from "react-i18next";
 import Homepage from "./views/Homepage";
 import About from "./views/About_us";
 import Contact from "./views/Contact_us";
 import { Switch } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { createBrowserHistory } from "history"
-import { loadLanguages } from "i18next";
 
 
 
@@ -78,7 +75,7 @@ const Index = ({ store, history }) => (
             <Router history={history}>
                 <Suspense>
                     <Route path="/:locale" component={App} />
-                    {location.pathname === "/" ? <Redirect to="/en" /> : '/az' }  
+                    {location.pathname === "/" ? <Redirect to="/az" /> : location.pathname }  
                 </Suspense>
             </Router>
         </Provider>
